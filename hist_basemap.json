@@ -1,0 +1,31 @@
+{
+  "version": 8,
+  "projection": { "type": "globe" },
+  "glyphs": "https://michaeljpincus.github.io/franklin_basemap/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://michaeljpincus.github.io/basemap/sprites/sprite",
+  "sources": {
+    "base": {
+      "type": "vector",
+      "url": "https://tiles.openfreemap.org/planet",
+      "attribution": "&copy; <a href=\"https://openfreemap.org\">OpenFreeMap</a> &copy; OpenMapTiles, data &copy; OpenStreetMap contributors | Style: Michael Pincus"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": { "background-color": "#d6ebff" }
+    },
+    {
+      "id": "waterway",
+      "type": "line",
+      "source": "base",
+      "source-layer": "waterway",
+      "minzoom": 7,
+      "paint": {
+        "line-color": "#d6ebff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 7, 0.4, 12, 1.5]
+      }
+    }
+  ]
+}
